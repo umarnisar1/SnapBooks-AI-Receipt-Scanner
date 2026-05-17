@@ -146,7 +146,7 @@
     <span>·</span>
     Effective: April 12, 2025
     <span>·</span>
-    Last Updated: April 14, 2026
+    Last Updated: May 17, 2026
   </div>
 </header>
 
@@ -165,7 +165,7 @@
       <li><a href="#s3">How We Use Your Information</a></li>
       <li><a href="#s4">Legal Bases for Processing (GDPR)</a></li>
       <li><a href="#s5">How We Share Your Information</a></li>
-      <li><a href="#s6">Receipt Image Processing &amp; AI</a></li>
+      <li><a href="#s6">Receipt Image, PDF &amp; AI Processing</a></li>
       <li><a href="#s7">Advertising &amp; Google AdMob</a></li>
       <li><a href="#s8">Advertising ID &amp; Device Identifiers</a></li>
       <li><a href="#s9">GDPR &amp; Consent (EEA / UK Users)</a></li>
@@ -194,14 +194,16 @@
     <p><strong>2.1 Information You Provide Directly</strong></p>
     <ul>
       <li><strong>Account Information:</strong> Email address, display name, and profile photo when you sign in via Google or other providers</li>
-      <li><strong>Receipt Images:</strong> Images you capture or upload for scanning</li>
-      <li><strong>Expense Data:</strong> Vendor names, amounts, dates, categories, currencies, and notes</li>
+      <li><strong>Receipt Images and Files:</strong> Images or PDFs you capture, upload, or batch import for scanning</li>
+      <li><strong>Expense Data:</strong> Vendor names, amounts, dates, categories, currencies, taxes, line items, notes, receipt status, and duplicate/review signals</li>
+      <li><strong>Receipt Protection Data:</strong> Optional return deadlines, warranty expiry dates, reminder lead times, reminder notification identifiers, and notes you add to protect a purchase</li>
+      <li><strong>Reports and Exports:</strong> Tax report summaries, CSV/PDF export contents, and related file metadata generated from your saved expense data</li>
       <li><strong>Communications:</strong> Messages you send to us via email or in-app support</li>
     </ul>
     <p><strong>2.2 Information Collected Automatically</strong></p>
     <ul>
       <li><strong>Device Information:</strong> Device type, OS version, unique device identifiers (Android Advertising ID, Apple IDFA)</li>
-      <li><strong>Usage Data:</strong> Features used, scan counts, session duration, crash reports, and error logs</li>
+      <li><strong>Usage Data:</strong> Features used, scan counts, batch import actions, report/export actions, reminder scheduling status, session duration, crash reports, and error logs</li>
       <li><strong>Log Data:</strong> IP address, access times, and screens viewed</li>
       <li><strong>Analytics:</strong> Aggregated usage metrics via Google Firebase Analytics</li>
     </ul>
@@ -217,10 +219,11 @@
   <section id="s3">
     <h2>3. How We Use Your Information</h2>
     <ul>
-      <li><strong>Provide the Service:</strong> Process receipt images via AI/OCR and store your expense records</li>
+      <li><strong>Provide the Service:</strong> Process receipt images and PDFs via AI/OCR, extract receipt fields and line items, store expense records, detect duplicates, generate reports/exports, and manage return or warranty reminders you choose to create</li>
       <li><strong>Account Management:</strong> Create, authenticate, and manage your account</li>
       <li><strong>Subscription Management:</strong> Track scan credits and enforce plan limits</li>
-      <li><strong>AI Processing:</strong> Send receipt images to AI providers for data extraction</li>
+      <li><strong>AI Processing:</strong> Send receipt images or PDFs to AI providers for receipt, tax, category, and line-item extraction</li>
+      <li><strong>Notifications:</strong> Schedule local notifications for receipt review, return deadlines, and warranty expiry reminders when enabled or requested</li>
       <li><strong>Analytics &amp; Improvement:</strong> Understand usage and improve features</li>
       <li><strong>Advertising:</strong> Serve advertisements to free-tier users via Google AdMob</li>
       <li><strong>Security:</strong> Detect and prevent fraud, abuse, or Terms violations</li>
@@ -245,7 +248,7 @@
     <div class="no-sell">✅ We do not sell, rent, or trade your personal data for marketing purposes.</div>
     <p>We share data only as follows:</p>
     <ul>
-      <li><strong>AI Providers (Google Gemini, DeepInfra, DeepSeek):</strong> Receipt images transmitted for OCR extraction only. No other personal identifiers sent. Each provider's own privacy policy applies.</li>
+      <li><strong>AI Providers (Google Gemini, DeepInfra, DeepSeek):</strong> Receipt images or PDFs are transmitted for OCR, receipt field, tax, category, and line-item extraction only. No account password or payment details are sent. Each provider's own privacy policy applies.</li>
       <li><strong>Google Firebase:</strong> Authentication, database, and analytics as a service provider under our direction</li>
       <li><strong>RevenueCat:</strong> User identifier and purchase status for subscription management</li>
       <li><strong>Google AdMob:</strong> Device identifiers and interaction data for ad serving on free accounts</li>
@@ -257,16 +260,18 @@
   </section>
 
   <section id="s6">
-    <h2>6. Receipt Image Processing &amp; AI</h2>
-    <p>When you scan a receipt:</p>
+    <h2>6. Receipt Image, PDF &amp; AI Processing</h2>
+    <p>When you scan or import a receipt:</p>
     <ol style="margin: 8px 0 12px 20px;">
-      <li style="margin-bottom:6px; color:#57534e;">The image is captured on-device and encoded securely</li>
+      <li style="margin-bottom:6px; color:#57534e;">The image or PDF is captured, selected, or queued on-device</li>
       <li style="margin-bottom:6px; color:#57534e;">It is transmitted via HTTPS to our backend server</li>
-      <li style="margin-bottom:6px; color:#57534e;">Our server forwards the image to an AI provider for OCR extraction</li>
-      <li style="margin-bottom:6px; color:#57534e;">Structured data is returned and stored in your account</li>
-      <li style="margin-bottom:6px; color:#57534e;">AI providers process the image under their own retention policies</li>
+      <li style="margin-bottom:6px; color:#57534e;">Our server forwards the file to an AI provider for OCR extraction</li>
+      <li style="margin-bottom:6px; color:#57534e;">Structured data, including receipt fields, categories, tax values, and line items, is returned and stored in your account or guest storage</li>
+      <li style="margin-bottom:6px; color:#57534e;">AI providers process the file under their own retention policies</li>
     </ol>
     <p><strong>Important:</strong> AI-extracted data may be inaccurate. You must verify all extracted data before use. SnapBooks accepts no liability for errors in AI-generated data.</p>
+    <p><strong>Reports and exports:</strong> PDF and CSV reports are generated from your saved expense records and are shared only when you choose to share or export them.</p>
+    <p><strong>Return and warranty reminders:</strong> Purchase protection dates and notes are stored with the expense. Reminder notifications are scheduled through the device notification system and can be removed by editing or deleting protection details.</p>
     <p>We recommend not scanning receipts containing sensitive personal information beyond what is needed for expense tracking.</p>
   </section>
 
@@ -323,7 +328,8 @@
     <p><strong>Retention periods by data type:</strong></p>
     <ul>
       <li><strong>Account data (name, email):</strong> Retained until account deletion, then deleted within 30 days</li>
-      <li><strong>Receipt images &amp; expense data:</strong> Retained while account is active; deleted within 30 days of account deletion</li>
+      <li><strong>Receipt images, PDFs, expense data, line items, and purchase protection data:</strong> Retained while account is active or until you delete them; deleted within 30 days of account deletion</li>
+      <li><strong>Generated reports and exports:</strong> Created from saved expense data and retained only as long as needed to generate, cache, or share the file unless you save it externally</li>
       <li><strong>Usage &amp; analytics data:</strong> Retained for up to 24 months in aggregated or anonymised form</li>
       <li><strong>Log &amp; crash data:</strong> Retained for up to 90 days</li>
       <li><strong>Advertising data:</strong> Governed by Google AdMob's own retention policies</li>
@@ -356,7 +362,7 @@
       <li>Firebase security rules restrict access to authenticated users only</li>
       <li>Industry-standard token-based authentication (JWT)</li>
       <li>Payment details never stored by us — handled by App Stores and RevenueCat</li>
-      <li>Receipt images transmitted to AI providers over encrypted connections only</li>
+      <li>Receipt images and PDFs transmitted to AI providers over encrypted connections only</li>
     </ul>
     <div class="caps">NO SYSTEM IS 100% SECURE. WE CANNOT GUARANTEE ABSOLUTE SECURITY. BY USING THE APP YOU ACCEPT THIS INHERENT RISK. In the event of a breach affecting your rights, we will notify you and relevant authorities as required by applicable law.</div>
   </section>
