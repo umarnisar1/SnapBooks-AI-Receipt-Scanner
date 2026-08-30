@@ -144,7 +144,7 @@
     <span>·</span>
     Effective: April 12, 2025
     <span>·</span>
-    Last Updated: June 22, 2026
+    Last Updated: August 30, 2026
   </div>
 </header>
 
@@ -176,6 +176,7 @@
       <li><a href="#s16">Cookies &amp; Tracking Technologies</a></li>
       <li><a href="#s17">Third-Party Services &amp; Privacy Policies</a></li>
       <li><a href="#s18">Changes to This Policy</a></li>
+      <li><a href="#s-team">Team &amp; Shared Workspaces</a></li>
       <li><a href="#s19">Contact Us</a></li>
     </ol>
   </div>
@@ -184,7 +185,7 @@
     <h2>1. Who We Are</h2>
     <p>SnapBooks is the developer and publisher of the SnapBooks receipt scanning and expense management application. We are the data controller of personal information collected through the App.</p>
     <p><strong>Contact:</strong> <a href="mailto:snapbookocr@gmail.com">snapbookocr@gmail.com</a><br>
-    <strong>Website:</strong> <a href="https://app.nexzuku.com" target="_blank" rel="noopener">app.nexzuku.com</a></p>
+    <strong>Website:</strong> <a href="https://snapbooks.deosai.net" target="_blank" rel="noopener">snapbooks.deosai.net</a></p>
   </section>
 
   <section id="s2">
@@ -195,7 +196,7 @@
       <li><strong>Receipt Images and Files:</strong> Images or PDFs you capture, upload, or batch import for scanning</li>
       <li><strong>Expense Data:</strong> Vendor names, amounts, dates, categories, currencies, taxes, line items, notes, receipt status, and duplicate/review signals</li>
       <li><strong>Receipt Protection Data:</strong> Optional return deadlines, warranty expiry dates, reminder lead times, reminder notification identifiers, and notes you add to protect a purchase</li>
-      <li><strong>Reports and Exports:</strong> Tax report summaries, CSV/PDF export contents, and related file metadata generated from your saved expense data</li>
+      <li><strong>Reports and Exports:</strong> Tax report summaries, CSV/PDF export contents, a year-end tax pack (compiling your totals, expense detail, business mileage, and receipt images into one document), and related file metadata generated from your saved expense data</li>
       <li><strong>Communications:</strong> Messages you send to us via email or in-app support</li>
     </ul>
     <p><strong>2.2 Information Collected Automatically</strong></p>
@@ -219,6 +220,7 @@
       <li><strong>Forwarded Email Data (Email Forwarding):</strong> If you forward (or auto-forward) receipts to your unique SnapBooks email address, we receive and process the email's sender, subject, body text, and attachments to extract receipt data. Attachments and receipt images are processed like any other receipt (see §6).</li>
       <li><strong>Notification Content (Bank Auto-Capture):</strong> On Android, if you grant Notification access and enable auto-capture, we read incoming notifications from the apps you allow in order to detect bank/wallet transaction alerts (amount, merchant, date). Reading happens <strong>on your device by default</strong>; notifications that do not look like a transaction are ignored and not stored. We never store OTPs, passwords, or verification codes.</li>
       <li><strong>Bank Transaction &amp; Statement Data (Bank Sync):</strong> Transactions you import from CSV or PDF/image bank statements, or that are auto-captured from notifications — including date, amount, currency, merchant, and direction. Imported statement files are processed to extract transactions (see §5 and §6).</li>
+      <li><strong>QuickBooks Online Integration:</strong> If you connect QuickBooks, we store — encrypted, on our server, never on your device or shared with clients — the access and refresh tokens and the company (realm) ID that let us act on your behalf. When you choose to send a verified expense, we read that expense's vendor, date, amount, currency, category, notes and receipt image, create a matching record in your QuickBooks company, and attach the receipt. We store a per-expense sync record (QuickBooks IDs, status, timestamps) so a retry never creates a duplicate. Disconnecting revokes and deletes the tokens; it does not delete records already created in QuickBooks.</li>
     </ul>
   </section>
 
@@ -227,7 +229,7 @@
     <ul>
       <li><strong>Provide the Service:</strong> Process receipt images and PDFs via AI/OCR, extract receipt fields and line items, store expense records, detect duplicates, generate reports/exports, and manage return or warranty reminders you choose to create</li>
       <li><strong>Account Management:</strong> Create, authenticate, and manage your account</li>
-      <li><strong>Subscription Management:</strong> Track scan credits and enforce plan limits</li>
+      <li><strong>Subscription Management:</strong> Track scan usage and enforce plan limits (free accounts receive a monthly scan allowance that resets each month; Pro subscribers receive unlimited scans)</li>
       <li><strong>AI Processing:</strong> Send receipt images or PDFs to AI providers for receipt, tax, category, and line-item extraction</li>
       <li><strong>Notifications:</strong> Schedule local notifications for receipt review, return deadlines, and warranty expiry reminders when enabled or requested</li>
       <li><strong>Mileage Tracking (optional):</strong> Use location, including background location when you enable automatic detection, to record work trips, draw trip maps, and estimate mileage tax deductions</li>
@@ -260,6 +262,7 @@
     <ul>
       <li><strong>AI Providers (Google Gemini, DeepInfra, DeepSeek):</strong> Receipt images or PDFs are transmitted for OCR, receipt field, tax, category, and line-item extraction. The same providers also process <strong>imported bank statement files</strong> to extract transactions, and — <strong>only if you enable "Smarter Detection"</strong> — the <strong>text of captured bank alerts</strong> to classify transactions. No account password or full payment-card details are sent. Each provider's own privacy policy applies.</li>
       <li><strong>Email Infrastructure (Cloudflare):</strong> Receipts you forward to your SnapBooks address are routed and received through our email infrastructure so we can extract them. Email content is processed only to provide the forwarding feature.</li>
+      <li><strong>QuickBooks Online (Intuit):</strong> Only if you connect QuickBooks and then choose to send an expense, we transmit that expense's fields and its receipt image to your own QuickBooks company via Intuit's API. We do not send your other expenses, receipts, mileage, or bank data to Intuit. Intuit's privacy policy governs the data once it is in QuickBooks.</li>
       <li><strong>Google Firebase:</strong> Authentication, database, and analytics as a service provider under our direction</li>
       <li><strong>RevenueCat:</strong> User identifier and purchase status for subscription management</li>
       <li><strong>Google AdMob:</strong> Device identifiers and interaction data for ad serving on free accounts</li>
@@ -443,6 +446,7 @@
       <li><strong>RevenueCat</strong> (subscription management) — <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a></li>
       <li><strong>DeepInfra</strong> (AI/OCR processing) — <a href="https://deepinfra.com/privacy" target="_blank" rel="noopener">deepinfra.com/privacy</a></li>
       <li><strong>Cloudflare</strong> (email forwarding infrastructure) — <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">cloudflare.com/privacypolicy</a></li>
+      <li><strong>Intuit QuickBooks Online</strong> (optional accounting sync) — <a href="https://www.intuit.com/privacy/" target="_blank" rel="noopener">intuit.com/privacy</a></li>
       <li><strong>Google Play Store / Apple App Store</strong> (distribution and billing) — governed by their respective platform policies</li>
     </ul>
     <p>SnapBooks is not responsible for data practices of third-party services. We encourage you to review their policies directly.</p>
@@ -458,10 +462,24 @@
     <p>Your continued use of the App after changes become effective constitutes your acceptance of the updated Policy. If you do not agree, please stop using the App and delete your account.</p>
   </section>
 
+  <section id="s-team">
+    <h2>19. Team &amp; Shared Workspaces</h2>
+    <p>SnapBooks offers optional team workspaces (currently up to 10 members each). If you create or join a team workspace, the expenses, receipts, and related data you add to it are shared with its other members and visible to them according to their role — owner, admin, member, or viewer.</p>
+    <ul>
+      <li>Members can submit expenses for approval; owners and admins can see the member list, invite or remove members, approve or reject submitted expenses, change roles, and view an activity log of these actions.</li>
+      <li>To support this workflow, members may receive in-app notifications about actions that affect them, such as an approval decision or a role change.</li>
+      <li>Your name and email address are shown to the other members of any workspace you belong to.</li>
+      <li>Data in your personal workspace is never shared.</li>
+      <li>When you leave a workspace, or an admin removes you, you lose access to its shared data, but content you contributed remains with the workspace.</li>
+      <li>If a workspace is deleted, its shared data is removed.</li>
+    </ul>
+    <p>Team mode is off by default, and you control which workspaces you join.</p>
+  </section>
+
   <section id="s19">
-    <h2>19. Contact Us</h2>
+    <h2>20. Contact Us</h2>
     <p><strong>Email:</strong> <a href="mailto:snapbookocr@gmail.com">snapbookocr@gmail.com</a><br>
-    <strong>Website:</strong> <a href="https://app.nexzuku.com" target="_blank" rel="noopener">app.nexzuku.com</a><br>
+    <strong>Website:</strong> <a href="https://snapbooks.deosai.net" target="_blank" rel="noopener">snapbooks.deosai.net</a><br>
     <strong>Privacy Requests:</strong> Email with subject "Privacy Request – SnapBooks"<br>
     <strong>Account Deletion:</strong> Email with subject "Delete My Account – SnapBooks"<br>
     <strong>Legal Notices:</strong> Email with subject "Legal Notice – SnapBooks"</p>
